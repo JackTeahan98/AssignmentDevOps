@@ -11,6 +11,23 @@ pipeline {
   tools {nodejs "node"}
     
   stages {
+    
+             stage('Checkout SCM'){
+                 steps{
+             checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GitHub', url: 'https://github.com/hoganSean99/Advanced_Database.git']]])
+                 }
+     }
+    
+     stage('Code Analysis'){
+         steps{
+         script {
+                 def scannerHome = tool 'sonar-scanner';
+                     withSonarQubeEnv("sonar-scanner") {
+                     sh "${tool("sonar-scanner")}/bin/sonar-scanner -Dsonar.organization=jackteahan98 -Dsonar.projectKey=JackTeahan98_AssignmentDevOps"
+                     }
+                         }
+                           }
+     }
         
     stage('Cloning Git') {
       steps {
