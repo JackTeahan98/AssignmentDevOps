@@ -29,26 +29,26 @@ pipeline {
       }
     }
     
-    stage('Building Image') {
-      steps {
-        script{dockerImage = docker.build registry + ":$BUILD_NUMBER"}
-      }
-     } 
+  //  stage('Building Image') {
+  //    steps {
+  //      script{dockerImage = docker.build registry + ":$BUILD_NUMBER"}
+  //    }
+  //   } 
     
-    stage('Push Image to DockerHub') {
-      steps {
-        script{docker.withRegistry('',registryCredential){
-        dockerImage.push()
-        }
-      }
-     } 
+   // stage('Push Image to DockerHub') {
+  //    steps {
+  //      script{docker.withRegistry('',registryCredential){
+   //     dockerImage.push()
+   //     }
+   //   }
+  //   } 
     }
     
-    stage('Deploy Application') {
-      steps {
-        sh 'docker run --name ZooApp -d -p 3000:3000 $registry:$BUILD_NUMBER'
-      }
-    }
-  }
+  //  stage('Deploy Application') {
+  //    steps {
+  //      sh 'docker run --name ZooApp -d -p 3000:3000 $registry:$BUILD_NUMBER'
+ //     }
+ //   }
+ // }
   
   }
