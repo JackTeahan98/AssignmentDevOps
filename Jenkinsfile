@@ -29,6 +29,12 @@ pipeline {
       }
     }
     
+    stage('Stop Running Containers') {
+      steps {
+        sh 'docker stop  $(docker ps -a)'   
+      }
+    }
+         
     stage('Delete Existing Containers') {
       steps {
         sh 'docker system prune -a -f'
