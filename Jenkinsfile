@@ -29,9 +29,11 @@ pipeline {
       }
     }
     
+ 
+    
     stage('Stop Running Containers') {
       steps {
-        sh 'docker stop  $(docker ps -a)'   
+        sh 'docker rm -f ZooApp > /dev/null 2>&1 && echo 'removed container' || echo 'nothing to remove''   
       }
     }
          
