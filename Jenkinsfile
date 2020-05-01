@@ -23,6 +23,7 @@ pipeline {
         sh 'npm install'
       }
     }
+  
     stage('Run Tests') {
       steps {
         sh 'npm test'
@@ -43,12 +44,17 @@ pipeline {
    //   }
   //   } 
    // }
-    
-    stage('Deploy Application') {
+    stage('Run Tests') {
       steps {
-      // sh 'docker run --name ZooApp -d -p 3000:3000 $registry:$BUILD_NUMBER'
         sh 'npm start'
+      }
+    }
+    
+ //   stage('Deploy Application') {
+//      steps {
+      // sh 'docker run --name ZooApp -d -p 3000:3000 $registry:$BUILD_NUMBER'
+        
       
-  }
+    //}
+//}
 }
-  }
