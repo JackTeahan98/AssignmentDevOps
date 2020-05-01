@@ -3,7 +3,9 @@ var express = require('express');
 var path = require('path');
 var app = express();
 var NodeCouchDB = require("node-couchdb")
-var couch = new NodeCouchDB({host:'34.254.40.140', protocol: 'http', port:5984});
+var couch = new NodeCouchDB({host:'34.254.40.140', 
+                             protocol: 'http', 
+                             port:5984});
 var dbname = "zoodata";
 var viewGet = "_design/getAllZoo/_view/allZoo";
 
