@@ -14,7 +14,7 @@ pipeline {
     
              stage('Checkout SCM'){
                  steps{
-             checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GitHub', url: 'https://github.com/hoganSean99/Advanced_Database.git']]])
+             checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'GitHub', url: 'https://github.com/JackTeahan98/AssignmentDevOps.git']]])
                  }
      }
     
