@@ -45,13 +45,7 @@ pipeline {
         sh 'npm test'
       }
     }
-    
- stage('Rebuild') {
-      steps {
-        sh 'npm rebuild'
-      }
-    }
-    
+        
     stage('Stop Running Containers') {
       steps {
         sh 'docker rm -f ZooApp > /dev/null 2>&1 && echo \'removed container\' || echo \'nothing to remove\''  
