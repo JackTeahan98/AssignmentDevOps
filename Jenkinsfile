@@ -23,38 +23,9 @@ pipeline {
         sh 'npm install'
       }
     }
-  
     stage('Run Tests') {
       steps {
         sh 'npm test'
       }
-    }
-    
-  //  stage('Building Image') {
-  //    steps {
-  //      script{dockerImage = docker.build registry + ":$BUILD_NUMBER"}
-  //    }
-  //   } 
-    
-   // stage('Push Image to DockerHub') {
-  //    steps {
-  //      script{docker.withRegistry('',registryCredential){
-   //     dockerImage.push()
-   //     }
-   //   }
-  //   } 
-   // }
-    stage('Run Tests') {
-      steps {
-        sh 'npm start'
-      }
-    }
-    
- //   stage('Deploy Application') {
-//      steps {
-      // sh 'docker run --name ZooApp -d -p 3000:3000 $registry:$BUILD_NUMBER'
-        
-      
-    //}
-//}
-}
+    } 
+  }
