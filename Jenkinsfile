@@ -20,7 +20,7 @@ pipeline {
         
     stage('Install dependencies') {
       steps {
-        sh 'npm clean-install'
+        sh 'npm install'
       }
     }
     stage('Run Tests') {
