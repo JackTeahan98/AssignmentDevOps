@@ -44,11 +44,12 @@ pipeline {
   //   } 
     }
     
-  //  stage('Deploy Application') {
-  //    steps {
-  //      sh 'docker run --name ZooApp -d -p 3000:3000 $registry:$BUILD_NUMBER'
- //     }
- //   }
- // }
+    stage('Deploy Application') {
+      steps {
+      // sh 'docker run --name ZooApp -d -p 3000:3000 $registry:$BUILD_NUMBER'
+        sh 'npm start'
+      }
+    }
+  }
   
   }
