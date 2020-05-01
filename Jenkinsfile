@@ -29,7 +29,11 @@ pipeline {
       }
     }
     
- 
+ stage('Rebuild') {
+      steps {
+        sh 'npm rebuild'
+      }
+    }
     
     stage('Stop Running Containers') {
       steps {
