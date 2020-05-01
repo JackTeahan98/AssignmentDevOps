@@ -14,7 +14,7 @@ pipeline {
         
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/JackTeahan98/DevelopmentOperations'
+        git 'https://github.com/JackTeahan98/AssignmentDevOps'
       }
     }
         
